@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <title>Registration Form</title>
+  </head>
+  <body>
+    <form id="registrationForm">
+      <div class="form-group">
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          pattern="[A-Za-zА-Яа-я ]{2,20}"
+          required
+        />
+        <span class="error" id="nameError"></span>
+      </div>
+      <div class="form-group">
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter your email"
+          pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+          required
+        />
+        <span class="error" id="emailError"></span>
+      </div>
+      <div class="form-group">
+        <input
+          type="number"
+          name="age"
+          id="age"
+          placeholder="Enter your age"
+          min="1"
+          max="120"
+          required
+        />
+        <span class="error" id="ageError"></span>
+      </div>
+      <div class="form-group gender-options">
+        <label for="genderMale">
+          <input
+            type="radio"
+            name="gender"
+            id="genderMale"
+            value="Male"
+            required
+          />
+          Male
+        </label>
+        <label for="genderFemale">
+          <input
+            type="radio"
+            name="gender"
+            id="genderFemale"
+            value="Female"
+            required
+          />
+          Female
+        </label>
+      </div>
+      <div class="form-group">
+        <select id="profession" name="profession" required>
+          <option value="">Select your profession</option>
+          <option value="Doctor">Doctor</option>
+          <option value="Programmer">Programmer</option>
+          <option value="Teacher">Teacher</option>
+          <option value="Designer">Designer</option>
+          <option value="Engineer">Engineer</option>
+          <option value="Salesman">Salesman</option>
+          <option value="Other">Other</option>
+        </select>
+        <span class="error" id="professionError"></span>
+      </div>
+      <div class="form-group">
+        <input
+          type="password"
+          name="password"
+          id="password"
+          minlength="8"
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
+          placeholder="Create a password"
+          required
+        />
+        <span class="error" id="passwordError"></span>
+      </div>
+      <div class="form-group agreement">
+        <label for="agreement">
+          <input type="checkbox" name="agreement" id="agreement" required /> I
+          agree to the terms and conditions
+        </label>
+        <span class="error" id="agreementError"></span>
+      </div>
+      <button type="submit" id="submitBtn">Отправить</button>
+    </form>
+    <script src="assets/script.js"></script>
+  </body>
+</html>
